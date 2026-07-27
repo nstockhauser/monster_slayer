@@ -38,73 +38,84 @@ type_chart = {
 
 
 status_chart = {
-
     "poison": {
         "effect": "poison",
-        "value": .15
+        "value": .08
     },
 
     "harden": {
         "effect": "harden",
-        "value": .50
+        "value": .30
     },
 
     "regen": {
         "effect": "regen",
-        "value": .05
+        "value": .04
     },
 
     "aim": {
         "effect": "aim",
-        "value": 100
-    }
+        "value": 92
+    },
 
+    "burn": {
+        "effect": "burn",
+        "value": .35
+    },
+
+    "recover": {
+        "effect": "recover",
+        "value": 110
+    },
 }
 
 ################ HEROS #####################
+
 heroes = [
     {
         "name": "Lionheart",
         "role": "Tank",
-        "type": "human",
-        "max_health": 280,
-        "health": 280,
-        "attack": 60,
-        "heals": 3,
-        "aim": 75,
-        "armor": .22,
+        "type": "rock",
+        "max_health": 320,
+        "health": 320,
+        "attack": 48,
+        "speed": 80,
+        "heals": 2,
+        "aim": 92,
+        "armor": .24,
 
         "special": {
             "name": "Boulder Toss",
             "type": "rock",
-            "uses": 3,
-            "damage": 65
-            },
+            "uses": 2,
+            "damage": 75
+        },
         "status": {
             "name": "Harden",
             "effect": "armor",
             "target": "self",
             "uses": 1,
             "turns": 3,
-            }
+        }
     },
 
     {
         "name": "Vex",
         "role": "Rogue",
-        "type": "human",
-        "max_health": 230,
-        "health": 230,
-        "attack": 70,
+        "type": "dark",
+        "max_health": 235,
+        "health": 235,
+        "attack": 68,
+        "speed": 80,
         "heals": 2,
-        "aim": 85,
-        "armor": .05,
+        "aim": 84,
+        "armor": .06,
 
         "special": {
             "name": "Shadow Lance",
             "type": "dark",
             "uses": 2,
-            "damage": 90
+            "damage": 85
         },
         "status": {
             "name": "Poison Dart",
@@ -118,25 +129,26 @@ heroes = [
     {
         "name": "Solara",
         "role": "Healer",
-        "type": "human",
+        "type": "holy",
         "max_health": 300,
         "health": 300,
-        "attack": 35,
-        "heals": 4,
-        "aim": 80,
+        "attack": 42,
+        "speed": 80,
+        "heals": 3,
+        "aim": 82,
         "armor": .12,
 
         "special": {
             "name": "Cleanse",
             "type": "holy",
             "uses": 2,
-            "damage": 75
+            "damage": 80
         },
         "status": {
             "name": "Blessing of Sol",
             "effect": "regen",
             "target": "self",
-            "uses": 3,
+            "uses": 2,
             "turns": 5,
         }
     },
@@ -144,19 +156,20 @@ heroes = [
     {
         "name": "Savos",
         "role": "Mage",
-        "type": "human",
-        "max_health": 200,
-        "health": 200,
-        "attack": 80,
+        "type": "magic",
+        "max_health": 215,
+        "health": 215,
+        "attack": 82,
+        "speed": 80,
         "heals": 2,
-        "aim": 65,
+        "aim": 70,
         "armor": .08,
 
         "special": {
             "name": "Frost Nova",
             "type": "ice",
             "uses": 1,
-            "damage": 100
+            "damage": 115
         },
         "status": {
             "name": "Eye of Magis",
@@ -176,119 +189,108 @@ monsters = [
         "name": "Ignivar",
         "note": "The Cinder King",
         "type": "fire",
-        "max_health": 300,
-        "health": 300,
-        "attack": 55,
-        "aim": 75,
-        "armor": .10
+        "max_health": 470,
+        "health": 470,
+        "attack": 58,
+        "aim": 78,
+        "armor": .12,
 
-######### PHASE 2 ATTACK #############
-
-        # "special": {
-        #     "name": "Frost Nova",
-        #     "type": "ice",
-        #     "uses": 3,
-        #     "damage": 55
-        # }
+        "status": {
+            "name": "Burned",
+            "effect": "burn",
+            "target": "enemy",
+            "uses": 1,
+            "turns": 4
+        }
     },
 
     {
         "name": "Frostmaw",
         "note": "The Hollow Glacier",
         "type": "ice",
-        "max_health": 340,
-        "health": 340,
-        "attack": 42,
-        "aim": 65,
-        "armor": .18
+        "max_health": 520,
+        "health": 520,
+        "attack": 50,
+        "aim": 76,
+        "armor": .20,
 
-######### PHASE 2 ATTACK #############
-
-        # "special": {
-        #     "name": "Frost Nova",
-        #     "type": "ice",
-        #     "uses": 3,
-        #     "damage": 55
-        # }
+        "special": {
+            "name": "Winterbane",
+            "type": "magic",
+            "uses": 1,
+            "damage": 145
+        }
     },
 
     {
         "name": "Gravemantle",
         "note": "The Stone Eater",
         "type": "rock",
-        "max_health": 520,
-        "health": 520,
-        "attack": 35,
-        "aim": 70,
-        "armor": .28
+        "max_health": 620,
+        "health": 620,
+        "attack": 62,
+        "aim": 62,
+        "armor": .26,
 
-######### PHASE 2 ATTACK #############
-
-        # "special": {
-        #     "name": "Frost Nova",
-        #     "type": "ice",
-        #     "uses": 3,
-        #     "damage": 55
-        # }
+        "special": {
+            "name": "Avalanche",
+            "type": "rock",
+            "uses": 1,
+            "damage": 100
+        }
     },
 
     {
         "name": "Veyra",
-        "note": "Choir of Blinding Light",
+        "note": "Bringer of Light",
         "type": "holy",
-        "max_health": 230,
-        "health": 230,
-        "attack": 70,
-        "aim": 85,
-        "armor": .06
+        "max_health": 460,
+        "health": 460,
+        "attack": 58,
+        "aim": 88,
+        "armor": .10,
 
-######### PHASE 2 ATTACK #############
-
-        # "special": {
-        #     "name": "Frost Nova",
-        #     "type": "ice",
-        #     "uses": 3,
-        #     "damage": 55
-        # }
+        "special": {
+            "name": "Divine Blessing",
+            "type": "holy",
+            "uses": 1,
+            "turns": 1
+        }
     },
 
     {
         "name": "Umbros",
         "note": "The Hollow Watcher",
         "type": "dark",
-        "max_health": 250,
-        "health": 250,
-        "attack": 80,
-        "aim": 45,
-        "armor": .04
+        "max_health": 400,
+        "health": 400,
+        "attack": 78,
+        "aim": 58,
+        "armor": .06,
 
-######### PHASE 2 ATTACK #############
-
-        # "special": {
-        #     "name": "Frost Nova",
-        #     "type": "ice",
-        #     "uses": 3,
-        #     "damage": 55
-        # }
+        "special": {
+            "name": "Slaughter",
+            "type": "dark",
+            "uses": 1,
+            "damage": 28
+        }
     },
 
     {
-        "name": "Magis",
+        "name": "Vorath",
         "note": "The Broken Archmage",
         "type": "magic",
-        "max_health": 285,
-        "health": 285,
+        "max_health": 440,
+        "health": 440,
         "attack": 60,
-        "aim": 80,
-        "armor": .12
+        "aim": 82,
+        "armor": .12,
 
-######### PHASE 2 ATTACK #############
-
-        # "special": {
-        #     "name": "Frost Nova",
-        #     "type": "ice",
-        #     "uses": 3,
-        #     "damage": 55
-        # }
+        "special": {
+            "name": "Elemental Storm",
+            "type": "variety",
+            "uses": 1,
+            "damage": 32
+        }
     }
 ]

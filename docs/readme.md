@@ -80,21 +80,27 @@ This README provides an overview of the current version of the game, including g
 
 ### 👹 Monster Design
 
-| Feature               | Description                                                         |
-| --------------------- | ------------------------------------------------------------------- |
-| **Basic Attack**      | Standard monster attack.                                            |
-| **Unique Elements**   | Each monster has its own elemental affinity and stat distribution.  |
-| **Phase 2 Abilities** | Planned for a future update, unlocking new abilities at low health. |
+| Feature               | Description                                                                  |
+| --------------------- | ---------------------------------------------------------------------------- |
+| **Basic Attack**      | Standard monster attack.                                                     |
+| **Unique Elements**   | Each monster has its own elemental affinity and stat distribution.           |
+| **Phase 2 Abilities** | Each monster activates a unique ability after falling to 33% health or less. |
 
 ---
 
 ### 👹 Current Monsters
 
-| Monster         | Element | Specialty                                                                        |
-| --------------- | ------- | -------------------------------------------------------------------------------- |
-| **Ignivar**     | Fire    | A balanced fighter with solid damage and durability.                             |
-| **Frostmaw**    | Ice     | A defensive monster with high health and armor that excels in prolonged battles. |
-| **Gravemantle** | Rock    | A heavily armored juggernaut that slowly wears down opponents.                   |
-| **Veyra**       | Holy    | A fast, high-accuracy monster that relies on precise attacks.                    |
-| **Umbros**      | Dark    | A glass cannon with devastating attacks but poor accuracy and low defenses.      |
-| **Magis**       | Magic   | A well-rounded spellcaster with balanced offense, accuracy, and survivability.   |
+| Monster         | Element | Specialty                                                                                      |
+| --------------- | ------- | ---------------------------------------------------------------------------------------------- |
+| **Ignivar**     | Fire    | Applies **Burn**, dealing damage based on Ignivar's Attack over multiple turns.                |
+| **Frostmaw**    | Ice     | Charges **Winterbane** for one turn before releasing a devastating guaranteed attack.          |
+| **Gravemantle** | Rock    | Triggers **Avalanche**, dealing heavy damage and permanently reducing the hero's Armor.        |
+| **Veyra**       | Holy    | Uses **Divine Blessing** to restore health and permanently increase her Attack.                |
+| **Umbros**      | Dark    | Uses **Slaughter** to land between **2–5 attacks** in a single turn.                           |
+| **Vorath**      | Magic   | Creates an **Elemental Storm**, striking three times with randomly selected elemental attacks. |
+
+---
+
+### Known bugs
+
+- Status Overwrite. Harden overwrites Ignivars Burn ( good for heor, unintended)
